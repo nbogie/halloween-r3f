@@ -22,35 +22,44 @@ function App() {
                 <OrbitControls autoRotate={false} />
 
                 {/* Red = x, Green = y, Blue = z.  Out from the centre is positive.  */}
-                <axesHelper scale={2} />
+                {/* <axesHelper scale={2} /> */}
+                {/* <MySimpleGLTFModel modelFilename="legolike.glb" /> */}
 
                 {/* A grid with unit markers, on the x-z plane.  */}
                 <gridHelper position={[0, -3, 0]} />
 
                 {/* A white light that shines from the top front, 
                 and a turqouise one that shines from the bottom */}
-                <pointLight position={[10, 10, 10]} />
-                <pointLight position={[2, -10, 4]} color={"#008080"} />
+                <pointLight position={[10, 10, 10]} color={0xaaffff} />
+
+                <pointLight position={[2, -10, 4]} color={"#a06060"} />
                 <Center position={[0, 2, 0]}>
                     <Text3D font={fontURL} scale={0.5}>
-                        Hello World
-                        <meshStandardMaterial color={"skyblue"} />
+                        Happy {"\n"}
+                        Halloween! <meshStandardMaterial color={"red"} />
                     </Text3D>
                 </Center>
-                {/* A floaty submarine model, which can be rotated */}
-                {/* If the rotation property looks worryingly complex to you - just delete it! */}
 
                 <Float
                     rotation={[0, -(rotationAmount * Math.PI) / 8, 0]}
-                    position={[0, 0, 0]}
+                    position={[-0, -2.1, 1.5]}
+                    scale={0.6}
                 >
-                    <MySimpleGLTFModel modelFilename="bikeTire.glb" />
+                    <MySimpleGLTFModel modelFilename="eyesAndCauldron.glb" />
                 </Float>
+
+                <group position={[0, -3, 0]}>
+                    <MySimpleGLTFModel modelFilename="headstonesAndHill.glb" />
+                </group>
+
                 <Float
                     rotation={[0, -(rotationAmount * Math.PI) / 8, 0]}
-                    position={[0, -1, 0]}
+                    position={[-2, -1, 0]}
+                    scale={[0.7, 0.7, 0.7]}
                 >
-                    <MySimpleGLTFModel modelFilename="bikeTirePink.glb" />
+                    <MySimpleGLTFModel modelFilename="jackolanternHatted.glb" />
+
+                    {/* <pointLight color={"lime"} /> */}
                 </Float>
 
                 {/* a box you can click on */}
